@@ -2,7 +2,33 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+            <img src="/img/AddressBookLogo.png" class="d-block mx-lg-auto img-fluid" alt="" width="700"
+                 height="600" loading="lazy">
+        </div>
+        <div class="col-lg-6">
+            <h1 class="display-5 fw-bold lh-1 mb-3">Manage all your contacts in one place</h1>
+            <p class="lead">
+                A simple, fast and scalable address book that helps you manage your contacts easily
+                so you never lost contact information.
+            </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a class="btn btn-warning btn-lg px-4 me-md-2" asp-area="" asp-controller="Contacts" asp-action="Index">Demo</a>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <h5>
+                        <div class="pt-2">
+                            Built with ASP.NET Core, C#, .NET 5, MVC, Bootstrap 5 and Postgres SQL
+                        </div>
+                        <div class="pt-2">
+                            Hosted with Heroku, CI/CD with Github
+                        </div>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
