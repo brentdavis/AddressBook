@@ -1,0 +1,66 @@
+﻿@model AddressBook.Models.Contact
+@inject AddressBook.Services.Interfaces.IImageService _imageService
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="container mt-5">
+    <h4>Contact Details</h4>
+    <hr />
+    <div class="p-3 border border-2 shadow-lg bg-light">
+        <form class="row g-3 p-2">
+            <div class="col-12 col-md-4">
+                <img class="img-fluid" src="@_imageService.ConvertByteArrayToFile(Model.ImageData, Model.ImageType)" />
+            </div>
+            <div class="col-12 col-md-8">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">First Name</label>
+                        <input type="text" readonly class="form-control-plaintext" value="@Model.FirstName">
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">Last Name</label>
+                        <input type="text" readonly class="form-control-plaintext" value="@Model.LastName">
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">Address 1</label>
+                        <input type="text" readonly class="form-control-plaintext" value="@Model.Address1">
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">Address 2</label>
+                        <input type="text" readonly class="form-control-plaintext" value="@Model.Address2">
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">City</label>
+                        <input type="text" readonly class="form-control-plaintext" value="@Model.City">
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">State</label>
+                        <input type="text" readonly class="form-control-plaintext" value="@Model.State">
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">Zip Code</label>
+                        <input type="text" readonly class="form-control-plaintext" value="@Model.Zip">
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">Email</label>
+                        <input type="text" readonly class="form-control-plaintext" value="@Model.Email">
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">Phone</label>
+                        <input type="text" readonly class="form-control-plaintext" value="@Model.Phone">
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">Created</label>
+                        <input type="text" readonly class="form-control-plaintext" value="@Model.Created">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="mt-2">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-light">Edit</a>
+        <a asp-action="Index" class="btn btn-light">Back to List</a>
+    </div>
+</div>
+

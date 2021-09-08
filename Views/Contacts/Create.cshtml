@@ -1,0 +1,69 @@
+﻿@model AddressBook.Models.Contact
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+    <h4>Create Contact</h4>
+    <hr />
+    <div class="p-3 border border-2 shadow-lg bg-light">
+        <form class="row g-3 p-2" asp-action="Create" enctype="multipart/form-data">
+            <div class="col-12 col-md-8">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">First Name</label>
+                        <input asp-for="FirstName" class="form-control" />
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">Last Name</label>
+                        <input asp-for="LastName" class="form-control" />
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">Address 1</label>
+                        <input asp-for="Address1" class="form-control" />
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">Address 2</label>
+                        <input asp-for="Address2" class="form-control" />
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">City</label>
+                        <input asp-for="City" class="form-control" />
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">State</label>
+                        <input asp-for="State" class="form-control" />
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">Zip Code</label>
+                        <input asp-for="Zip" class="form-control" />
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">Email</label>
+                        <input asp-for="Email" class="form-control" />
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label fw-bold">Phone</label>
+                        <input asp-for="Phone" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label fw-bold">Image</label>
+                        <input type="file" asp-for="ImageFile" class="form-control" />
+                    </div>
+                </div>
+                <br />
+                <div>
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="mt-2">
+        <a asp-action="Index" class="btn btn-light">Back to List</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
